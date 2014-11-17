@@ -10,6 +10,16 @@
     <div ng-controller="MyController">
       <h1>Hello {{ clock.now }}</h1>
     </div>
+
+    <hr />
+
+    <div ng-controller="FirstController">
+      <h4>The simplest adding machine ever</h4>
+      <button ng-click="add(1)" class="button">Add</button>
+      <a ng-click="subtract(1)" class="button alert">Subtract</a>
+      <h4>Current count: {{ counter }}</h4>
+    </div>
+
     <script type="text/javascript" src="app.js"> </script>
   </body>
 </html>
