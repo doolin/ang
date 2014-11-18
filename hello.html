@@ -20,6 +20,13 @@
       <h4>Current count: {{ counter }}</h4>
     </div>
 
+    <hr />
+
+    <div ng-controller="SSController">
+      <input ng-model="name" type="text" placeholder="Your name">
+      <h3>Hello {{ name.toUpperCase() }} </h3>
+    </div>
+
     <script type="text/javascript" src="app.js"> </script>
   </body>
 </html>

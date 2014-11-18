@@ -19,3 +19,5 @@ app.controller('FirstController', function($scope) {
   $scope.subtract = function(amount) { $scope.counter -= amount; };
 });
 
+app.controller('SSController', function($scope) {
+});
