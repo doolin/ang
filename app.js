@@ -20,4 +20,6 @@ app.controller('FirstController', function($scope) {
 });
 
 app.controller('SSController', function($scope) {
+  $scope.AF = 0
+  console.log($scope.ER);
 });

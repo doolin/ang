@@ -23,8 +23,9 @@
     <hr />
 
     <div ng-controller="SSController">
-      <input ng-model="name" type="text" placeholder="Your name">
-      <h3>Hello {{ name.toUpperCase() }} </h3>
+      <input ng-model="ER" type="text" placeholder="Efficiency Rating">
+      <input ng-model="TP" type="text" placeholder="Task Point Allowance">
+      <h3>Hello {{ ER*TP }} </h3>
     </div>
 
     <script type="text/javascript" src="app.js"> </script>
