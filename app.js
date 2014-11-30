@@ -9,7 +9,12 @@ app.controller('MyController', function($scope, $timeout) {
     }, 1000);
   }
   updateClock();
+
+  $scope.person = {
+    name: "Dave D"
+  };
 });
+
 
 //var app = angular.module('app', []);
 //var app = angular.module('myApp', []);
