@@ -28,3 +28,14 @@ app.controller('SSController', function($scope) {
   $scope.AF = 0
   console.log($scope.ER);
 });
+
+app.controller('ParentController', function($scope) {
+  // There is an error in the book here on page 31.
+  $scope.person = { greeted: false };
+});
+
+app.controller('ChildController', function($scope) {
+  $scope.sayHello = function() {
+    $scope.person.name = "Dave D";
+  }
+});
