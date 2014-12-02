@@ -26,7 +26,7 @@ app.controller('FirstController', function($scope) {
 
 app.controller('SSController', function($scope) {
   $scope.AF = 0
-  console.log($scope.ER);
+  //console.log($scope.ER);
 });
 
 app.controller('ParentController', function($scope) {
@@ -38,4 +38,16 @@ app.controller('ChildController', function($scope) {
   $scope.sayHello = function() {
     $scope.person.name = "Dave D";
   }
+});
+
+
+// Page 34, this one doesn't work either.
+app.controller('ParseController',
+function($scope, $parse) {
+  $scope.$watch('expr', function(newVal, oldVal, scope) {
+    if (newVal !== oldVal) {
+      var parseFun = $parse(newVal);
+      $scope.parsedValue = parseFun(scope);
+    }
+  });
 });
