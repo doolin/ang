@@ -51,3 +51,14 @@ function($scope, $parse) {
     }
   });
 });
+
+app.controller('InterpolatorController',
+  function($scope, $interpolate) {
+    $scope.$watch('emailBody', function(body) {
+      if (body) {
+        var template = $interpolate(body);
+        $scope.previewText =
+          template({to: $scope.to});
+      }
+    });
+  });
