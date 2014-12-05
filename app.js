@@ -15,6 +15,10 @@ app.controller('MyController', function($scope, $timeout) {
   };
 });
 
+app.controller('FilterDemoController', ['$scope', '$filter',
+  function($scope, $filter) {
+    $scope.name = $filter('lowercase')('DAVE');
+  }]);
 
 //var app = angular.module('app', []);
 //var app = angular.module('myApp', []);
