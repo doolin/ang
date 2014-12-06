@@ -17,6 +17,43 @@
         <pre>__ previewText __</pre>
       </div>
     </div>
+
+    <hr>
+
+    <div ng-controller="DateDemoController">
+      <h4>Some date handling examples</h4>
+      <p>medium: __ date.today | date:'medium' __</p>
+      <p>short: __ date.today | date:'short' __</p>
+      <p>fullDate: __ date.today | date:'fullDate' __</p>
+      <p>longDate: __ date.today | date:'longDate' __</p>
+      <p>mediumDate: __ date.today | date:'mediumDate' __</p>
+      <p>shortDate: __ date.today | date:'shortDate' __</p>
+      <p>mediumTime: __ date.today | date:'mediumTime' __</p>
+      <p>shortTime: __ date.today | date:'shortTime' __</p>
+
+      <p>
+        The following doesn't work because the interpolation characters were
+        changed to underscores for this file: medium {{ date.today | date:'medium' }}
+      </p>
+
+      <h4>Year formatting</h4>
+      <p>Four-digit year: __ date.today | date:'yyyy' __</p>
+      <p>Two-digit year: __ date.today | date:'yy' __</p>
+      <p>One-digit year: __ date.today | date:'y' __</p>
+
+      <h4>Month formatting</h4>
+      <p>Month in year: __ date.today | date:'MMMM' __</p>
+      <p>Short month in year: __ date.today | date:'MMM' __</p>
+      <p>Padded month in year: __ date.today | date:'MM' __</p>
+      <p>Month in year: __ date.today | date:'M' __</p>
+
+      <h4>Day formatting</h4>
+      <p>Padded day in month: __ date.today | date:'dd' __</p>
+      <p>Day in month: __ date.today | date:'d' __</p>
+      <p>Day in week: __ date.today | date:'EEEE' __</p>
+      <p>Short day in month: __ date.today | date:'EEE' __</p>
+    </div>
+
     <script type="text/javascript" src="email.js"> </script>
   </body>
 </html>

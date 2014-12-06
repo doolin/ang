@@ -28,3 +28,10 @@ app.controller('InterpolatorController',
       }
     });
   });
+
+app.controller('DateDemoController', ['$scope', '$filter',
+  function($scope, $filter) {
+    console.log('here');
+    $scope.date = { today: new Date() };
+    console.log($scope.date.today);
+  }]);
