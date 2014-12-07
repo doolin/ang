@@ -18,6 +18,10 @@
       </div>
     </div>
 
+    <p>
+      <a href="http://jsbin.com/ivuJEXI/1/edit?html,js,output"> Link to example from book</a>.
+    </p>
+
     <hr>
 
     <div ng-controller="DateDemoController">
@@ -52,6 +56,32 @@
       <p>Day in month: __ date.today | date:'d' __</p>
       <p>Day in week: __ date.today | date:'EEEE' __</p>
       <p>Short day in month: __ date.today | date:'EEE' __</p>
+
+      <h4>Hour formatting</h4>
+      <p>Padded hour in day: __ date.today | date:'HH' __</p>
+      <p>Hour in day: __ date.today | date:'H' __</p>
+      <p>Padded hour in am/pm: __ date.today | date:'hh' __</p>
+      <p>Hour in am/pm: __ date.today | date:'h' __</p>
+
+      <h4>Minute formatting</h4>
+      <p>Padded minute in hour: __ date.today | date:'mm' __</p>
+      <p>Minute in hour: __ date.today | date:'m' __</p>
+
+      <h4>Second formatting</h4>
+      <p>Padded second in minute: __ date.today | date:'ss' __</p>
+      <p>Second in minute: __ date.today | date:'s' __</p>
+      <p>Padded millisecond in second: __ date.today | date:'.sss' __</p>
+
+      <h4>String formatting</h4>
+      <p>am/pm character: __ date.today | date:'a' __</p>
+      <p>4-digit time zone offset: __ date.today | date:'Z' __</p>
+
+      <h4>Some custom date formatting:</h4>
+
+      <p>__ date.today | date:'MMM d, y' __</p>
+      <p>__ date.today | date:'EEEE, d, M' __</p>
+      <p>__ date.today | date:'hh.mm.ss.sss' __</p>
+
     </div>
 
     <script type="text/javascript" src="email.js"> </script>
