@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Simple App</title>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js">
+    </script>
+  </head>
+  <body>
+    <div ng-controller="FilterDemoController">
+      <p>
+      {{ ['Ari', 'Lerner', 'Likes', 'To', 'Eat', 'Pizza'] | filter:'e' }}
+      </p>
+
+      <p>
+      {{ [{
+          'name': 'Ari',
+          'City': 'San Francisco',
+          'favorite food': 'Pizza',
+          }, {
+          'name': 'Nate',
+          'City': 'San Francisco',
+          'favorite food': 'indian food'
+          }] | filter:{'favorite food': 'Pizza'}
+      }}
+    </div>
+
+    <script type="text/javascript" src="filters.js"> </script>
+  </body>
+</html>
