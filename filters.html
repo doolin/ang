@@ -23,6 +23,31 @@
           'favorite food': 'indian food'
           }] | filter:{'favorite food': 'Pizza'}
       }}
+      </p>
+
+      <p>
+      {{ ['Ari', 'likes', 'to', 'travel'] | filter:isCapitalized }}
+      </p>
+
+      <p>
+      {{ { 'name': 'Ari', 'City': 'San Francisco'} | json }}
+      </p>
+
+      <p>
+      {{ "San Francisco is very cloudy" | limitTo:3 }}
+      </p>
+
+      <p>
+      {{ "San Francisco is very cloudy" | limitTo:-6 }}
+      </p>
+
+      <p>
+      {{ ['a', 'b', 'c', 'd', 'e', 'f'] | limitTo:1 }}
+      </p>
+
+      <p>
+      {{ "San Francisco is very cloudy" | lowercase }}
+      </p>
     </div>
 
     <script type="text/javascript" src="filters.js"> </script>
