@@ -56,6 +56,35 @@
       <p>
       {{ 1.234567 | number:2 }}
       </p>
+
+      <h3>orderBy</h3>
+      <p>
+      {{ [{
+          'name': 'Ari',
+          'status': 'awake'
+          }, {
+          'name': 'Q',
+          'status': 'sleeping'
+          }, {
+          'name': 'Nate',
+          'status': 'awake'
+          }] | orderBy: 'name' }}
+      </p>
+      <p>
+      <b>Reverse:</b>
+      {{ [{
+          'name': 'Ari',
+          'status': 'awake'
+          }, {
+          'name': 'Q',
+          'status': 'sleeping'
+          }, {
+          'name': 'Nate',
+          'status': 'awake'
+          }] | orderBy: 'name':true }}
+      </p>
+
+      <p>{{ "San Francisco is very cloudy" | uppercase }}</p>
     </div>
 
     <script type="text/javascript" src="filters.js"> </script>
