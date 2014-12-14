@@ -8,14 +8,21 @@
   </head>
   <body>
     <div ng-controller="FormDemoController">
-      <input ng-model="to"
-             type="email"
-             placeholder="Recipient" />
-      <textarea ng-model="emailBody"></textarea>
-
-      <div id="emailPreview">
-        <pre>__ previewText __</pre>
-      </div>
+      <form name="form" novalidate>
+        <label name="email">Your email</label>
+        <input type="email"
+               name="email"
+               ng-model="email"
+               placeholder="Email Address" />
+        <p><input type="text" required/>
+        <p><input type="text" ng-minlength=5 />
+        <p><input type="text" ng-maxlength=20 />
+        <p><input type="text" ng-pattern="[a-zA-Z]" />
+        <p><input type="email" name="email" ng-model="user.email" />
+        <p><input type="number" name="age" ng-model="user.age" />
+        <p><input type="url" name="homepage" ng-model="user.facebook_url" />
+        <p><button type="submit" class="button radius">Submit</button>
+      </form>
     </div>
 
     <script type="text/javascript" src="form.js"> </script>
