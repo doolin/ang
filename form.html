@@ -8,6 +8,18 @@
   </head>
   <body>
     <div ng-controller="FormDemoController">
+      <h4>Form demo</h4>
+
+      <form name="signup_form" novalidate ng-submit="signupForm()">
+        <fieldset>
+          <legend>Signup</legend>
+
+          <button type="submit" class="button radius">Submit</button>
+        </fieldset>
+      </form>
+
+
+      <h4>Form</h4>
       <form name="form" novalidate>
         <label name="email">Your email</label>
         <input type="email"
