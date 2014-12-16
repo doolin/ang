@@ -2,6 +2,7 @@
 <html ng-app="myApp">
   <head>
     <title>Simple App</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
     <script
       src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js">
     </script>
@@ -13,6 +14,17 @@
       <form name="signup_form" novalidate ng-submit="signupForm()">
         <fieldset>
           <legend>Signup</legend>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Your name</label>
+              <input type="text"
+                     placeholder="Name"
+                     name="name"
+                     ng-model="signup.name"
+                     ng-minlength=3
+                     ng-maxlength=20 required />
+            </div>
+          </div>
 
           <button type="submit" class="button radius">Submit</button>
         </fieldset>
