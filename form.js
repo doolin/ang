@@ -26,3 +26,15 @@ app.directive('ensureUnique', function($http) {
     }
   }
 });
+
+app.controller('signupController',
+  function($scope) {
+    $scope.submitted = false;
+    $scope.signupForm = function() {
+      if ($scope.signup_form.$valide) {
+        // submit as normal
+      } else {
+        $scope.signup_form.submitted = true;
+      }
+    }
+  });

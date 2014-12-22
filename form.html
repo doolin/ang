@@ -11,7 +11,9 @@
     <div ng-controller="FormDemoController">
       <h4>Form demo</h4>
 
-      <form name="signup_form" novalidate ng-submit="signupForm()">
+      <form name="signup_form" novalidate
+        ng-submit="signupForm()"
+        ng-controller="signupController">
         <fieldset>
           <legend>Signup</legend>
 
@@ -26,7 +28,8 @@
                      ng-minlength=3
                      ng-maxlength=20 required />
               <div class="error"
-                   ng-show"signup_form.name.$dirty && signup_form.name.$invalid">
+                   ng-show"signup_form.name.$dirty && signup_form.name.$invalid &&
+                   signup_form.submitted">
                 <small class="error"
                        ng-show="signup_form.name.$error.required">
                        Your name is required.
@@ -37,7 +40,8 @@
                 </small>
                 <small class="error"
                        ng-show="signup_form.name.$error.maxlength">
-                       Your name cannot be longer than 20 characters
+                       Your name cannot be longer than
+                       20 characters
                 </small>
               </div>
             </div>
