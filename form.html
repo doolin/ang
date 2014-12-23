@@ -21,12 +21,14 @@
           <div class="row">
             <div class="large-12 columns">
               <label>Your name</label>
-              <input type="text"
+              <input ng-class="{
+                     error: signup_form.name.$dirty &&
+                     signup_form.name.$invalid}"
                      placeholder="Name"
                      name="name"
                      ng-model="signup.name"
                      ng-minlength=3
-                     ng-maxlength=20 required />
+                     ng-maxlength=20 required ng-focus />
               <div class="error"
                    ng-show"signup_form.name.$dirty && signup_form.name.$invalid &&
                    signup_form.submitted">
@@ -82,7 +84,10 @@
           <div class="row">
             <div class="large-12 columns">
               <label>Username</label>
-                <input type="text"
+              <input ng-class="{
+                       error: signup_form.name.$dirty &&
+                       signup_form.name.$invalid}"
+                       type="text"
                        placeholder="Desired username"
                        ng-minlength=3
                        ng-model="signup.username"
