@@ -30,8 +30,9 @@
                      ng-minlength=3
                      ng-maxlength=20 required ng-focus />
               <div class="error"
-                   ng-show"signup_form.name.$dirty && signup_form.name.$invalid &&
-                   signup_form.submitted">
+                   ng-show"signup_form.name.$dirty &&
+                   signup_form.name.$invalid &&
+                   !signup_form.$focused">
                 <small class="error"
                        ng-show="signup_form.name.$error.required">
                        Your name is required.
