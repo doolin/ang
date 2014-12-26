@@ -1,10 +1,5 @@
-app = angular.module('myApp', []);
-
-app.controller('FormDemoController',
-  function($scope) {
-  });
-
-app.directive('ensureUnique', function($http) {
+angular.module('myApp', [])
+.directive('ensureUnique', function($http) {
   return {
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
@@ -25,30 +20,18 @@ app.directive('ensureUnique', function($http) {
       });
     }
   }
-});
+})
 
-app.controller('signupController',
-  function($scope) {
-    $scope.submitted = false;
-    $scope.signupForm = function() {
-      if ($scope.signup_form.$valide) {
-        // submit as normal
-      } else {
-        $scope.signup_form.submitted = true;
-      }
-    }
-  });
-
-app.directive('ngFocus', [function() {
+.directive('ngFocus', [function() {
   var FOCUS_CLASS = "ng-focused";
   return {
-    restrict 'A',
+    restrict: 'A',
     require: 'ngModel',
     link: function(scope, element, attrs, ctrl) {
       ctrl.$focused = false;
       element.bind('focus', function(evt) {
         element.addClass(FOCUS_CLASS);
-        scope$apply(function() {
+        scope.$apply(function() {
           ctrl.$focused = true;
         });
       }).bind('blur', function(evt) {
@@ -59,4 +42,19 @@ app.directive('ngFocus', [function() {
       });
     }
   }
-}]);
+}])
+
+.controller('signupController',
+  function($scope) {
+    $scope.submitted = false;
+    $scope.signupForm = function() {
+      if ($scope.signup_form.$valide) {
+        // submit as normal
+      } else {
+        $scope.signup_form.submitted = true;
+      }
+    }
+  }
+);
+
+
