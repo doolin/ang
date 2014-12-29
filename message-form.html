@@ -6,6 +6,28 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="node_modules/angular-messages/angular-messages.js"></script>
+    <style>
+      body {
+        background-color: #fff;
+        border-top: 5px solid #3399cc;
+      }
+
+      html {
+        background: #fff;
+      }
+
+      .row {
+        border: 0px solid green;
+      }
+
+      input.ng-invalid {
+        border: 1px solid red;
+      }
+
+      input.ng-valid {
+        border: 1px solid green;
+      }
+    </style>
   </head>
   <body>
     <h4>Form demo</h4>
@@ -23,6 +45,7 @@
             <input ng-class="{
                    error: signup_form.name.$dirty &&
                    signup_form.name.$invalid}"
+                   type="text"
                    placeholder="Name"
                    name="name"
                    ng-model="signup.name"
