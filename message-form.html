@@ -52,22 +52,16 @@
                    ng-minlength=3
                    ng-maxlength=20 required ng-focus />
             <div class="error"
-                 ng-show"signup_form.name.$dirty &&
-                 signup_form.name.$invalid &&
-                 !signup_form.$focused">
-              <small class="error"
-                     ng-show="signup_form.name.$error.required">
-                     Your name is required.
-              </small>
-              <small class="error"
-                     ng-show="signup_form.name.$error.minlength">
-                     Your name is required to be at least 3 characters
-              </small>
-              <small class="error"
-                     ng-show="signup_form.name.$error.maxlength">
-                     Your name cannot be longer than
-                     20 characters
-              </small>
+                 ng-messages="signup_form.name.$error">
+              <div ng-message="required">
+                Make sure you enter your name
+              </div>
+              <div ng-message="minlength">
+                Your name must be at least 3 characters
+              </div>
+              <div ng-message="maxlength">
+                Your name cannot be longer than 20 characters
+              </div>
             </div>
           </div>
         </div>
@@ -79,10 +73,12 @@
             <input type="email"
                    placeholder="Email"
                    name="email"
-                   ng-mode="signup.email"
-                   ng-minlength=3 ng-maxlength=20 required />
+                   ng-model="signup.email"
+                   ng-minlength=3 ng-maxlength=100 required />
             <div class="error"
-                 ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+                 ng-show="signup_form.email.$dirty &&
+                 signup_form.email.$invalid &&
+                 !signup_form.email.$focused">
               <small class="error"
                      ng-show="signup_form.email.$error.required">
                      Your email is required.
@@ -118,7 +114,8 @@
                      ensure-unique="username" required />
             <div class="error"
                  ng-show="signup_form.username.$dirty &&
-                          signup_form.username.$invalid">
+                          signup_form.username.$invalid &&
+                          !signup_form.username.$focused">
               <small class="error"
                      ng-show="signup_form.username.$error.required">
                      Please input a username
