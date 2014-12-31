@@ -52,16 +52,8 @@
                    ng-minlength=3
                    ng-maxlength=20 required ng-focus />
             <div class="error"
-                 ng-messages="signup_form.name.$error">
-              <div ng-message="required">
-                Make sure you enter your name
-              </div>
-              <div ng-message="minlength">
-                Your name must be at least 3 characters
-              </div>
-              <div ng-message="maxlength">
-                Your name cannot be longer than 20 characters
-              </div>
+                 ng-messages="signup_form.name.$error"
+                 ng-messages-include="message-template.html">
             </div>
           </div>
         </div>
