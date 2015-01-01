@@ -1,5 +1,6 @@
-angular.module('messageApp', ['ngMessages'])
-.directive('ensureUnique', function($http) {
+app = angular.module('messageApp', ['ngMessages']);
+
+app.directive('ensureUnique', function($http) {
   return {
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
@@ -22,7 +23,7 @@ angular.module('messageApp', ['ngMessages'])
   }
 })
 
-.directive('ngFocus', [function() {
+app.directive('ngFocus', [function() {
   var FOCUS_CLASS = "ng-focused";
   return {
     restrict: 'A',
@@ -44,11 +45,23 @@ angular.module('messageApp', ['ngMessages'])
   }
 }])
 
-.controller('signupController',
+app.directive('ensureUnique', function($http) {
+  return {
+    require: 'ngModel',
+    link: function(scope, ele, attrs, ctrl) {
+
+      ctrl.$parsers.push(function(val) {
+        // add validation here
+      })
+    }
+  }
+});
+
+app.controller('signupController',
   function($scope) {
     $scope.submitted = false;
     $scope.signupForm = function() {
-      if ($scope.signup_form.$valide) {
+      if ($scope.signup_form.$valid) {
         // submit as normal
       } else {
         $scope.signup_form.submitted = true;
@@ -56,5 +69,3 @@ angular.module('messageApp', ['ngMessages'])
     }
   }
 );
-
-
