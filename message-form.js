@@ -51,7 +51,31 @@ app.directive('ensureUnique', function($http) {
     link: function(scope, ele, attrs, ctrl) {
 
       ctrl.$parsers.push(function(val) {
-        // add validation here
+        if (!val || val.length === 0) {
+          return;
+        }
+
+        ngModel.$setValidity('checkingAvailability', true);
+        ngModel.$setValidity('usernameAvailability', false);
+
+        $http({
+          method: 'GET',
+          url: url,
+          params: {
+            username: val
+          }
+        }).success(function() {
+          ngModel
+            .$setValidity('checkingAvailability', false);
+          ngModel
+            .$setValidity('usernameAvailability', true);
+        })['catch'](function() {
+          ngModel
+            .$setValidity('checkingAvailability', false);
+          ngModel
+            .$setValidity('usernameValidity', false);
+        });
+        return val;
       })
     }
   }
