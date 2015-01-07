@@ -11,4 +11,15 @@ angular.module('myApp', [])
     replace: true,
     template: '<a href="http://google.com">Click me to go to Google</a>'
   }
+})
+.directive('myDirective3', function() {
+  return {
+    restrict: 'AEC',
+    replace: true,
+    scope: {
+      myUrl: '@',
+      myLinkText: '@'
+    },
+    template: '<a href="{{myUrl}}">{{myLinkText}}</a>'
+  }
 });
