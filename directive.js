@@ -22,4 +22,22 @@ angular.module('myApp', [])
     },
     template: '<a href="{{myUrl}}">{{myLinkText}}</a>'
   }
+})
+.directive('myDirective4', function() {
+  return {
+    restrict: 'AEC',
+    replace: true,
+    scope: {
+      myUrl: '=someAttr',
+      myLinkText: '@'
+    },
+    template: '\
+    <div>\
+      <label>My URL Field:</label>\
+      <input type="text"\
+        ng-model="myUrl" />\
+      <a href="{{myUrl}}">{{myLinkText}}</a>\
+    </div>\
+    '
+  }
 });
