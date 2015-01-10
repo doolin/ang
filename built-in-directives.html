@@ -11,6 +11,12 @@
     <h1>Demo 2:</h1>
     <textarea ng-disabled="isDisabled">Wait 1 second</textarea>
 
+    <h1>ng-readonly</h1>
+    <input type="text" ng-model="someProperty"><br>
+    <input type="text"
+           ng-readonly="someProperty"
+           value="Some text here"/>
+
     <script>
       // js for demo 2
       angular.module('myApp', [])
