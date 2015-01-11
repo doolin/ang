@@ -17,6 +17,28 @@
            ng-readonly="someProperty"
            value="Some text here"/>
 
+    <h1>ng-checked</h1>
+    <label>someProperty = {{someProperty}}</label>
+    <input type="checkbox"
+           ng-checked="someProperty"
+           ng-init="someProperty = true"
+           ng-model="someProperty">
+
+    <label>anotherProperty = {{anotherProperty}}</label>
+    <input type="checkbox"
+           ng-checked="anotherProperty"
+           ng-init="anotherProperty = false"
+           ng-model="anotherProperty">
+
+    <h1>ng-selected</h1>
+    <label>Select two fish:</label>
+    <input type="checkbox"
+           ng-model="isTwoFish"><br/>
+    <select>
+      <option>One Fish</option>
+      <option ng-selected="isTwoFish">Two Fish</option>
+    </select>
+
     <script>
       // js for demo 2
       angular.module('myApp', [])
