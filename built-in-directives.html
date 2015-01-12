@@ -39,6 +39,10 @@
       <option ng-selected="isTwoFish">Two Fish</option>
     </select>
 
+    <h1>ng-href</h1>
+    <a ng-href="{{myHref}}">I'm feeling lucky, when I load</a>
+    <a href="{{myHref}}">I'm feeling 404</a>
+
     <script>
       // js for demo 2
       angular.module('myApp', [])
@@ -46,6 +50,11 @@
         $rootScope.isDisabled = true;
         $timeout(function() {
           $rootScope.isDisabled = false;
-          }, 5000);
+        }, 5000);
+      })
+      .run(function($rootScope, $timeout) {
+        $timeout(function() {
+          $rootScope.myHref = 'http://google.com';
+        }, 2000);
       });
     </script>
