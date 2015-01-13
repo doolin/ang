@@ -43,6 +43,13 @@
     <a ng-href="{{myHref}}">I'm feeling lucky, when I load</a>
     <a href="{{myHref}}">I'm feeling 404</a>
 
+    <h1>ng-src</h1>
+    <h2>Wrong way</h2>
+    <img src="{{imgSrc}}"/>
+
+    <h2>Right way</h2>
+    <img ng-src="{{imgSrc}}" />
+
     <script>
       // js for demo 2
       angular.module('myApp', [])
@@ -55,6 +62,11 @@
       .run(function($rootScope, $timeout) {
         $timeout(function() {
           $rootScope.myHref = 'http://google.com';
+        }, 2000);
+      })
+      .run(function($rootScope, $timeout) {
+        $timeout(function() {
+          $rootScope.imgSrc = 'https://www.google.com/images/srpr/logo11w.png';
         }, 2000);
       });
     </script>
