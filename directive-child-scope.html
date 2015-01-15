@@ -11,12 +11,28 @@
     {{ someProperty }}
     <button ng-click="someAction()">communicate</button>
 
+    <div ng-controller="SomeController">
+      {{ someModel.someProperty }}
+      <button ng-click="someAction()">Communicate</button>
+    </div>
+
     <script type="text/javascript">
       angular.module('myApp', [])
       .run(function($rootScope) {
         $rootScope.someProperty = 'hello computer';
         $rootScope.someAction = function() {
           $rootScope.someProperty = 'hello human';
+        };
+        })
+      .controller('SomeController', function($scope) {
+        // create a model
+        $scope.someModel = {
+          // with a property
+          someProperty: 'hello computer (SomeController)'
+        }
+        // set actions on $scope itself
+        $scope.someAction = function() {
+          $scope.someModel.someProperty = 'hello human (SomeController)';
         };
       });
     </script>
