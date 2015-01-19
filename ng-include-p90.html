@@ -6,10 +6,15 @@
 </head>
 <body>
   <div ng-include
-    src="'/ng-include-template.html'"
+    src="'./ng-include-template.html'"
     ng-controller="MyController"
     ng-init="name = 'World'">
     Hello {{ name }}
   </div>
+
+  <script>
+    angular.module('myApp', [])
+    .controller('MyController', function($scope) {});
+  </script>
 </body>
 </html>
