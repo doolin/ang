@@ -12,8 +12,13 @@
     <div ng-init="aThirdProperty = 'data for 3rd property'"
          ng-controller="SomeController">
       Inside Div Three: {{ aThirdProperty }}
-      <div ng-init="aFourthProperty">
+      <div ng-controller="SecondController">
         Inside Div Four: {{ aThirdProperty }}
+        <br>
+        Outside myDirective: {{ myProperty }}
+        <div my-directive ng-init="myProperty = 'wow, this is cool'">
+          Inside myDirective: {{ myProperty }}
+        </div> 
       </div>
     </div>
   </div>
@@ -23,6 +28,17 @@
     angular.module('myApp', [])
     .controller('SomeController', function($scope) {
       // we can leave it empty, just needs to be defined
+    })
+    .controller('SecondController', function($scope) {
+      // we can leave it empty, just needs to be defined
+    })
+//
+//    angular.module('myApp', [])
+    .directive('myDirective', function() {
+      return {
+        restrict: 'A',
+        scope: true
+      }
     })
   </script>
 </body>
