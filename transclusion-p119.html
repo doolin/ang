@@ -1,0 +1,36 @@
+<!doctype>
+<html ng-app="myApp">
+  <head>
+  </head>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+  <body>
+
+    <div sidebox title="Links">
+      <ul>
+        <li>First link</li>
+        <li>Second link</li>
+      </ul>
+    </div>
+
+    <script>
+      angular.module('myApp', [])
+      .directive('sidebox', function() {
+        return {
+          restrict: 'EA',
+          scope: {
+            title: '@'
+          },
+          transclude: true,
+          template: '<div class="sidebox">\
+                       <div class="content">\
+                         <h2 class="header">{{ title }} </h2>\
+                         <span class="content" ng-transclude>\
+                         </span>\
+                       </div>\
+                     </div>'
+        }
+      });
+    </script> 
+  </body>
+</html>
